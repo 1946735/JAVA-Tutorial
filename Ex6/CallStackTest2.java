@@ -158,7 +158,7 @@ class FactorialTest2 {
 
 class FactorialTest3 {
 	static long factorial2(int n) {
-		
+//		음 주석 단축키는 ctrl + /
 		int max = 23;		
 		if (n <= 0 || n > max) return -1; 
 		if (n <= 1) return 1;
