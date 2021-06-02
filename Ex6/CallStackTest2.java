@@ -181,3 +181,64 @@ class FactorialTest3 {
 		}
 	}
 }
+
+class MainTest {
+	public static void main (String args[]) {
+		main(null); // 재귀호출. 
+		}
+	}
+
+class PowerTest {
+	public static void main (String args[])	{
+		int x = 2;
+		int n = 4;
+		long result = 0;
+		for (int i = 1; i<=n; i++) {
+			result += power (x,i);
+		}
+		System.out.println(result);
+		}
+	
+	static long power(int x, int n) {
+		if(n==1) return x;
+		return x * power(x, n-1);
+	}
+}
+
+
+class MyMath2 {
+	long a,b;
+//	인스턴스변수 a,b만 사용해서 개발하므로  매개변수가 필요없다고 한다.
+	
+	long add() {return a + b; }
+	long substract() {return a - b; }
+	long multiply() {return a * b; }
+	double divide() {return a / b; } // float으로 잘못 기재함.
+	
+//	인스턴스변수와 관계없이 매개변수만으로 작업이 가능하다고 한다.
+	
+	static long add(long a, long b) { return a + b; }
+	static long substract(long a, long b) { return a - b; }
+	static long multiply(long a, long b) { return a * b; }
+	static double divide(long a, long b) { return a / b; }
+	
+}
+
+class MyMathTest2 {
+	public static void main (String args[]) {
+		System.out.println(MyMath2.add(200,100));
+		System.out.println(MyMath2.substract(200,100));
+		System.out.println(MyMath2.multiply(200,100));
+		System.out.println(MyMath2.divide(200,100));
+
+MyMath2 mm = new MyMath2() ; // 인스턴스를 생성
+mm.a = 200L;
+mm.b = 100L;
+//인스턴스메서드는 객체생성 후에만 호출이 가능함.
+System.out.println(mm.add());
+System.out.println(mm.substract());
+System.out.println(mm.multiply());
+System.out.println(mm.divide());
+
+}
+}
